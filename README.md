@@ -1,3 +1,10 @@
+live link : https://glowreach-crm.onrender.com/
+
+
+
+
+
+
 # GlowReach AI-Native CRM
 
 GlowReach is a production-ready AI-Native Marketing CRM for a Beauty & Fashion Brand inspired by Xeno's customer engagement platform. It helps marketers manage customer databases, parse natural language to construct targeting segments, write engaging marketing campaigns using AI, simulate delivery lifecycles, and view engagement metrics in real-time.
