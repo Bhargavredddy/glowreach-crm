@@ -1,0 +1,28 @@
+name: Deploy Channel Service to Railway
+
+on:
+  push:
+    paths:
+      - 'stub-channel-service/**'
+    branches: [ main ]
+
+jobs:
+  deploy-channel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Railway CLI
+        run: curl -sSL https://raw.githubusercontent.com/railwayapp/cli/master/install.sh | sh
+      - name: Login to Railway
+        env:
+          RAILWAY_API_KEY: ${{ secrets.RAILWAY_API_KEY }}
+        run: |
+          railway login --apiKey $RAILWAY_API_KEY
+      - name: Deploy channel service
+        run: |
+          cd stub-channel-service
+          railway up --detach
